@@ -1,4 +1,4 @@
-# Django Projects
+# Giselle's Django Projects #
 
 This repository contains software and documentation created during the
 process of learning [Django](https://www.djangoproject.com/) using
