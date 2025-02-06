@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.utils.html import escape
 from random import choice
+from django.views import View
+from django.shortcuts import render
 
 
 def funktionally(request):
@@ -187,5 +189,21 @@ def bounce(request):
         'https://ict.gctaa.net/',
         'https://www.dj4e.com/',
         'https://www.djangoproject.com/',
-    ]
+        ]
     return HttpResponseRedirect(choice(places))
+class Icecream(View):
+    def get(self, request):
+        x = {}
+        return render(request, 'viewsbasics/icecream.html',x)
+class Pink(View):
+    def get(self, request):
+        x= {}
+        return render(request, 'viewsbasics/pink.html', x)
+class Snowboarding(View):
+    def get(self, request):
+        x= {}
+        return render(request, 'viewsbasics/snowboarding.html', x)
+class Desserts(View):
+    def get(self, request):
+        x= {}
+        return render(request, 'viewsbasics/desserts.html', x)
