@@ -16,5 +16,8 @@ urlpatterns = [
     path('snowboarding', views.Snowboarding.as_view()),
     path('desserts', views.Desserts.as_view()),
     path('icecream/<flavor>', views.Icecream.as_view()),
-    path('pink/<color>',views.Pink.as_view())
+    path('pink/<color>',views.Pink.as_view()),
+    path('snowboarding/<winter>', views.Snowboarding.as_view()),
+    path('desserts/<dessert>', views.Desserts.as_view())
+
 ]    

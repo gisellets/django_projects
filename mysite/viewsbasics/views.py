@@ -201,8 +201,8 @@ class Pink(View):
         x= {'color': color}
         return render(request, 'viewsbasics/pink.html', x)
 class Snowboarding(View):
-    def get(self, request):
-        x= {}
+    def get(self, request, winter=''):
+        x= {'winter': winter}
         return render(request, 'viewsbasics/snowboarding.html', x)
 class Desserts(View):
     def get(self, request):
