@@ -14,5 +14,7 @@ urlpatterns = [
     path('icecream', views.Icecream.as_view()), 
     path('pink',views.Pink.as_view()),
     path('snowboarding', views.Snowboarding.as_view()),
-    path('desserts', views.Desserts.as_view())
+    path('desserts', views.Desserts.as_view()),
+    path('icecream/<flavor>', views.Icecream.as_view()),
+    path('pink/<color>',views.Pink.as_view())
 ]    

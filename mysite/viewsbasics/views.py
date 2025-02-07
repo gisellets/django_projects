@@ -192,12 +192,13 @@ def bounce(request):
         ]
     return HttpResponseRedirect(choice(places))
 class Icecream(View):
-    def get(self, request):
-        x = {}
+    def get(self, request,flavor=""):
+        #flavor = request.GET.get('flavor')
+        x = {'flavor': flavor}
         return render(request, 'viewsbasics/icecream.html',x)
 class Pink(View):
-    def get(self, request):
-        x= {}
+    def get(self, request,color=''):
+        x= {'color': color}
         return render(request, 'viewsbasics/pink.html', x)
 class Snowboarding(View):
     def get(self, request):
@@ -205,5 +206,6 @@ class Snowboarding(View):
         return render(request, 'viewsbasics/snowboarding.html', x)
 class Desserts(View):
     def get(self, request):
-        x= {}
+        dessert = request.GET.get('dessert')
+        x= {'dessert': dessert}
         return render(request, 'viewsbasics/desserts.html', x)
