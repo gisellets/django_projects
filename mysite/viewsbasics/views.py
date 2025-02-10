@@ -197,15 +197,15 @@ class Icecream(View):
         x = {'flavor': flavor}
         return render(request, 'viewsbasics/icecream.html',x)
 class Pink(View):
-    def get(self, request,color=''):
+    def get(self, request,color=""):
         x= {'color': color}
         return render(request, 'viewsbasics/pink.html', x)
 class Snowboarding(View):
-    def get(self, request, winter=''):
+    def get(self, request, winter=""):
         x= {'winter': winter}
         return render(request, 'viewsbasics/snowboarding.html', x)
 class Desserts(View):
-    def get(self, request):
-        dessert = request.GET.get('dessert')
+    def get(self, request, dessert=""):
+        #dessert = request.GET.get('dessert')
         x= {'dessert': dessert}
         return render(request, 'viewsbasics/desserts.html', x)
