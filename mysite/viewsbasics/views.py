@@ -191,6 +191,16 @@ def bounce(request):
         'https://www.djangoproject.com/',
         ]
     return HttpResponseRedirect(choice(places))
+class BMI(View):
+    def bmi(self, request, weight=1, height=1):
+        x = {'weight':weight}
+        y = {'height':height}
+        z = x/y**2
+        return render(request, 'viewsbasics/bmi.html',x,y,z)
+
+    
+
+    
 class Icecream(View):
     def get(self, request,flavor=""):
         #flavor = request.GET.get('flavor')
