@@ -20,5 +20,7 @@ urlpatterns = [
     path('snowboarding/<winter>', views.Snowboarding.as_view()),
     path('desserts/<dessert>', views.Desserts.as_view()),
     path('bmi', views.BMI.as_view()),
-    path('bmi/<str:weight>/<str:height>',views.BMI.as_view())
+    path('bmi/<str:weight>/<str:height>',views.BMI.as_view()),
+    path('pythagorean', views.Pythagorean.as_view()),
+    path('pythagorean/<str:a>/<str:b>', views.Pythagorean.as_view())
 ]    

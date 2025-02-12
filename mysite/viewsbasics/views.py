@@ -4,6 +4,7 @@ from django.utils.html import escape
 from random import choice
 from django.views import View
 from django.shortcuts import render
+import math
 
 
 def funktionally(request):
@@ -191,6 +192,7 @@ def bounce(request):
         'https://www.djangoproject.com/',
         ]
     return HttpResponseRedirect(choice(places))
+
 class BMI(View):
     def get(self, request, weight="0.0", height="1.0"):
         weight = float(weight)
@@ -198,6 +200,14 @@ class BMI(View):
         bmi = weight / (height ** 2)
         x = {'bmi':bmi, 'weight': weight, 'height':height}
         return render(request, 'viewsbasics/bmi.html', x)
+
+class Pythagorean(View):
+    def get(self, request, a="0.0", b="0.0"):
+        a = float(a)
+        b = float(b)
+        c = math.sqrt(a**2 + b**2)
+        x = {'a':a, 'b':b, 'c':c}
+        return render(request, 'viewsbasics/pythagorean.html', x)
     
 
     
