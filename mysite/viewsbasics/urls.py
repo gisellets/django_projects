@@ -19,7 +19,6 @@ urlpatterns = [
     path('pink/<color>',views.Pink.as_view()),
     path('snowboarding/<winter>', views.Snowboarding.as_view()),
     path('desserts/<dessert>', views.Desserts.as_view()),
-    path('bmi',views.BMI.as_view()),
-    path('bmi/<weight>/<height>', views.BMI.as_view())
-
+    path('bmi/<weight>/<height>/', views.BMI.as_view()),
+    path('bmi', views.BMI.as_view())
 ]    

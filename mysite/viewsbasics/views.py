@@ -192,11 +192,11 @@ def bounce(request):
         ]
     return HttpResponseRedirect(choice(places))
 class BMI(View):
-    def bmi(self, request, weight=1, height=1):
-        x = {'weight':weight}
-        y = {'height':height}
-        z = x/y**2
-        return render(request, 'viewsbasics/bmi.html',x,y,z)
+    def bmi(self, request, weight, height):
+        weight = float(weight)
+        height = float(height)
+        bmi = weight / (height ** 2)
+        return render(request, 'viewsbasics/bmi.html', {'bmi':bmi, 'weight': weight, 'height':height})
 
     
 
