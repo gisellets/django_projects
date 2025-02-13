@@ -1,13 +1,7 @@
-<!DOCTYPE html> 
-<html lang='en'>
-    <head>
-        <title>BMI Calculator </title>
-    </head>
+{% extends 'base.html' %}
 
-    <body>
-
+{% block content %}
         <p> You are {{ weight}} kg </p>
         <p> And you are {{ height }} meters tall </p>
         <p> Your BMI is {{ bmi }} !! </p>
-    </body>
-</html>
+{% endblock %}
