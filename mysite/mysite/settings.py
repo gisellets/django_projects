@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'viewsbasics.apps.ViewsbasicsConfig',
     'dtl.apps.DtlConfig',
+    'todo.apps.TodoConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
