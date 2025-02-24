@@ -8,7 +8,7 @@
 <main>
     <ul>
         {% for i in item_list %}
-        <li> <a href="{% url 'todo:detail' i.id %}">{{ i.text }}</a></li>
+        <li> <a href="{% url 'todo:detail' i.id %}">{{ i.item_text }}</a></li>
         {% endfor %}
     </ul>
 </main>
