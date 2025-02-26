@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+    <h1>{{services.test}} - Timeslots</h1>
+<ul>
+    {% for a in services.timeslot_set.all %}
+    <li>{{a.name}}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'cosmetology:index' %}">Back</a>
+{% endblock %}
+

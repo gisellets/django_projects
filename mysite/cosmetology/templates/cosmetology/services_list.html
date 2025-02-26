@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>List</h1>
+
+<main>
+<ul>
+    {% for s in services_list %}
+    <li>
+        <a href="{% url 'cosmetology:Services_detail' s.id %}">{{ s.text }}</a>
+    </li>
+    {% endfor %}
+</ul>
+</main>
+    {% endblock %}
