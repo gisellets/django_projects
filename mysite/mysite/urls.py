@@ -24,7 +24,7 @@ urlpatterns = [
     path('todo/', include('todo.urls')),
     path('viewsbasics/', include('viewsbasics.urls')),
     path('dtl/', include('dtl.urls')),
-    path('polls/', include('polls.urls')),
+    path('cats/', include('cats.urls')),
     path('cosmetology/', include('cosmetology.urls')),
     path('polls/', include('polls.urls'))
 ]

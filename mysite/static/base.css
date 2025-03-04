@@ -14,10 +14,21 @@ footer {
 a, a:visited {
     text-decoration: none;
     font-weight:bold;
-    color: #C92;
+    color: #F7CAC9;
 }
 main {
     display: grid;
     grid-template-columns: 48vw 48vw;
     grid-template-rows: auto;
+}
+a.button {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 10px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
+}
+li {
+    padding: 10px;
 }
