@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Removing Cat</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to remove "{{ object }}"?</p>
+    {{ form.as_p }}
+    <input type="submit" value="Confirm">
+</form>
+
+<a href="{% url 'cats:index' %}">Back</a>
+{% endblock %}
