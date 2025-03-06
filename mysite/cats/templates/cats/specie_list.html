@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>Lucy and Giselle's Cat Showcase</h1>
+
+<main>
+<ol>
+    {% for i in specie_list %}
+    <li>
+        <a href="{% url 'specie:detail' i.id %}">{{ i.specie_name }}</a>
+        <a href="{% url 'specie:update' i.id %}" class="button">Update</a>
+        <a href="{% url 'specie:delete' i.id %}" class="button">Delete<a>
+        {% endfor %}
+</ol>
+
+    <a href="{% url 'species:add' %}">Add a new species?</a>
+</main>
+    
+{% endblock %}
