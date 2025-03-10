@@ -1,43 +1,43 @@
 from django.shortcuts import render
 from django.views import generic
 from django.urls import reverse, reverse_lazy
-from .models import Cat, Specie
-from .forms import CatForm, SpeciesForm
+from .models import Cat, Type
+from .forms import CatForm, TypesForm
 # Create your views here.
 
-class IndexView(generic.ListView):
-    model = Specie
+class TypeIndexView(generic.ListView):
+    model = Type
+
+class TypeDetailView(generic.DetailView):
+    model = Type
 
 class DetailView(generic.DetailView):
-    model = Specie
-
-class DetailView(generic.DetailView):
     model = Cat
 
-class CreateView(generic.edit.CreateView):
-    model = Specie
+class TypeCreateView(generic.edit.CreateView):
+    model = Type
     fields = '__all__'
-    success_url = reverse_lazy("cats:index")
+    success_url = reverse_lazy("types:index")
 
-class UpdateView(generic.edit.UpdateView):
-    model = Specie
+class TypeUpdateView(generic.edit.UpdateView):
+    model = Type
     fields = '__all__'
-    success_url = reverse_lazy("cats:index")
+    success_url = reverse_lazy("types:index")
 
-class DeleteView(generic.edit.DeleteView):
-    model = Specie
-    success_url = reverse_lazy("cats:index")
+class TypeDeleteView(generic.edit.DeleteView):
+    model = Type
+    success_url = reverse_lazy("types:index")
 
 class CreateView(generic.edit.CreateView):
     model = Cat
     fields = '__all__'
-    success_url = reverse_lazy("species:index")
+    success_url = reverse_lazy("cats:detail")
 
 class UpdateView(generic.edit.UpdateView):
     model = Cat
     fields = '__all__'
-    success_url = reverse_lazy("species:index")
+    success_url = reverse_lazy("cats:detail")
 
 class DeleteView(generic.edit.DeleteView):
     model = Cat
-    success_url = reverse_lazy("species:index")
+    success_url = reverse_lazy("cats:detail")

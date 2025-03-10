@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<h1> {{type.type_name }}</h1>
+
+{% if type.cat_set.all|length > 0 %}
+<ul>
+    <li> {{type.cat_set.all}} </li>
+</ul>
+{% endif %}
+ <a href="{% url 'types:type.id:add' %} ">Add a new cat!</a>
+
+<a href='{% url 'types:index' %}'>Back</a>
+{% endblock %}
