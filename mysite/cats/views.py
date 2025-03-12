@@ -31,7 +31,7 @@ class TypeDeleteView(generic.edit.DeleteView):
 class CreateView(generic.edit.CreateView):
     model = Cat
     fields = '__all__'
-    success_url = reverse_lazy("cats:detail")
+    success_url = reverse_lazy("types:index")
 
 class UpdateView(generic.edit.UpdateView):
     model = Cat

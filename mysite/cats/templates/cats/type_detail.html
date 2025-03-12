@@ -7,11 +7,14 @@
 <h1> {{type.type_name }}</h1>
 
 {% if type.cat_set.all|length > 0 %}
+
+{% for c in type.cat_set.all %}
 <ul>
-    <li> {{type.cat_set.all}} </li>
+    <li> {{c.cat_name}} </li>
 </ul>
+{% endfor %}
 {% endif %}
- <a href="{% url 'types:type.id:add' %} ">Add a new cat!</a>
+<a href="{% url 'types:add' type.id %} ">Add a new cat!</a>
 
 <a href='{% url 'types:index' %}'>Back</a>
 {% endblock %}
