@@ -17,3 +17,10 @@ class Cat(models.Model):
 
     def get_absolute_url(self):
         return "/cats/%i/" % self.id
+class Treat(models.Model):
+    cats = models.ManyToManyField(Cat)
+
+    def __str__(self):
+        return self.treat_name
+    def get_absolute_url(self):
+        return "/treats/%i/" 

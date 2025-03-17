@@ -10,7 +10,11 @@
 
 {% for c in type.cat_set.all %}
 <ul>
-    <li> {{c.cat_name}} </li>
+    <li> {{c.cat_name}} 
+
+    <a href="{% url 'types:update' c.id %}" class="button">Update</a>
+    <a href="{% url 'types:delete' c.id %}" class="button">Delete</a>
+    </li>
 </ul>
 {% endfor %}
 {% endif %}

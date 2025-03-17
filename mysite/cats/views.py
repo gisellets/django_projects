@@ -31,14 +31,15 @@ class TypeDeleteView(generic.edit.DeleteView):
 class CreateView(generic.edit.CreateView):
     model = Cat
     fields = '__all__'
-    type_id = int([i for i in str(request.path).split('/') if i][-2])
-    success_url = reverse_lazy("types:{type_id}:detail")
-
+    def get_success_url(self):
+        return reverse_lazy("types:detail" , kwargs={"pk": self.object.type.id})
 class UpdateView(generic.edit.UpdateView):
     model = Cat
     fields = '__all__'
-    success_url = reverse_lazy("cats:detail")
+    def get_success_url(self):
+        return reverse_lazy("types:detail" , kwargs={"pk": self.object.type.id})
 
 class DeleteView(generic.edit.DeleteView):
     model = Cat
-    success_url = reverse_lazy("cats:detail")
+    def get_success_url(self):
+        return reverse_lazy("types:detail" , kwargs={"pk": self.object.type.id})
