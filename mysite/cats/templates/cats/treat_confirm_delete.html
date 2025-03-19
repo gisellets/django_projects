@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Removing Treat</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to remove "{{ object }}"?</p>
+    {{ form.as_p }}
+    <input type="submit" value="Confirm">
+</form>
+
+<a href="{% url 'types:detail' type.id  %}">Back</a>
+{% endblock %}

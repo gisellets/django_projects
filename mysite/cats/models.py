@@ -20,7 +20,9 @@ class Cat(models.Model):
 class Treat(models.Model):
     cats = models.ManyToManyField(Cat)
 
+    treat_name = models.CharField(max_length=200)
     def __str__(self):
         return self.treat_name
     def get_absolute_url(self):
         return "/treats/%i/" 
+

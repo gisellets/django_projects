@@ -5,3 +5,6 @@ class CatForm(forms.Form):
 
 class TypesForm(forms.Form):
     text = forms.CharField(max_length=200)
+
+class TreatForm(forms.Form):
+    text = forms.CharField(max_length=200)

@@ -10,13 +10,13 @@
     {% for i in type_list %}
     <li>
         <a href="{% url 'types:detail' i.id %}">{{ i.type_name }}</a>
-        <a href="{% url 'types:update' i.id %}" class="button">Update</a>
-        <a href="{% url 'types:delete' i.id %}" class="button">Delete<a>
+        <a href="{% url 'types:update_type' i.id %}" class="button">Update</a>
+        <a href="{% url 'types:delete_type' i.id %}" class="button">Delete<a>
         {% endfor %}
     </li>
 </ol>
 
-    <a href="{% url 'types:add' %}">Add a new species?</a>
+    <a href="{% url 'types:add_type' %}">Add a new species?</a>
 </main>
     
 {% endblock %}

@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.views import generic
 from django.urls import reverse, reverse_lazy
-from .models import Cat, Type
-from .forms import CatForm, TypesForm
+from .models import Cat, Type, Treat
+from .forms import CatForm, TypesForm, TreatForm
 # Create your views here.
 
 class TypeIndexView(generic.ListView):
@@ -43,3 +43,24 @@ class DeleteView(generic.edit.DeleteView):
     model = Cat
     def get_success_url(self):
         return reverse_lazy("types:detail" , kwargs={"pk": self.object.type.id})
+
+class TreatCreateView(generic.edit.CreateView):
+    model = Treat
+    fields = '__all__'
+    def get_success_url(self):
+        return reverse_lazy("types:detail" , kwargs={"pk": self.object.type.id})
+
+class TreatUpdateView(generic.edit.UpdateView):
+    model = Treat
+    fields = '__all__'
+    def get_success_url(self):
+        return reverse_lazy("types:detail" , kwargs={"pk": self.object.type.id})
+
+class TreatDeleteView(generic.edit.DeleteView):
+    model = Treat
+    fields = '__all__' 
+    def get_success_url(self):
+        return reverse_lazy("types:detail" , kwargs={"pk": self.object.type.id})
+
+class TreatDetailView(generic.DetailView):
+    model = Treat

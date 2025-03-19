@@ -10,7 +10,7 @@
 
 {% for c in type.cat_set.all %}
 <ul>
-    <li> {{c.cat_name}} 
+    <li> <a href="{% url 'types:treats:detail' c.id %}" >{{ c.cat_name}}</a>
 
     <a href="{% url 'types:update' c.id %}" class="button">Update</a>
     <a href="{% url 'types:delete' c.id %}" class="button">Delete</a>
