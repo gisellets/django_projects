@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<h1> {{cat.cat_name }}</h1>
+
+{% if treat.treat_set.all|length > 0 %}
+
+{% for t in treat.treat_set.all %}
+<ul>
+    <li> {{t.treat_name}} 
+
+    <a href="{% url 'cats:update_treat' t.id %}" class="button">Update</a>
+    <a href="{% url 'cats:delete_treat' t.id %}" class="button">Delete</a>
+    </li>
+</ul>
+{% endfor %}
+{% endif %}
+
+<a href="{% url 'cats:add_treat' treat.id %} ">Add a treat!</a>
+
+<a href='{% url 'types:detail' type.id  %}'>Back</a>
+
+
+{% endblock %}

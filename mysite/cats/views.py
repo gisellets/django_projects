@@ -48,19 +48,19 @@ class TreatCreateView(generic.edit.CreateView):
     model = Treat
     fields = '__all__'
     def get_success_url(self):
-        return reverse_lazy("types:detail" , kwargs={"pk": self.object.type.id})
+        return reverse_lazy("cats:types:treat" , kwargs={"pk": self.object.cat.id})
 
 class TreatUpdateView(generic.edit.UpdateView):
     model = Treat
     fields = '__all__'
     def get_success_url(self):
-        return reverse_lazy("types:detail" , kwargs={"pk": self.object.type.id})
+        return reverse_lazy("cats:cat_detail" , kwargs={"pk": self.object.type.id})
 
 class TreatDeleteView(generic.edit.DeleteView):
     model = Treat
     fields = '__all__' 
     def get_success_url(self):
-        return reverse_lazy("types:detail" , kwargs={"pk": self.object.type.id})
+        return reverse_lazy("cats:cat_detail" , kwargs={"pk": self.object.type.id})
 
 class TreatDetailView(generic.DetailView):
-    model = Treat
+    model = Cat
