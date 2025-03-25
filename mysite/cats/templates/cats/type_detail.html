@@ -10,15 +10,15 @@
 
 {% for c in type.cat_set.all %}
 <ul>
-    <li> <a href="{% url 'cats:detail_treat' c.id %}" >{{ c.cat_name}}</a>
+    <li> <a href="{% url 'cats:cat_detail' c.id %}" >{{ c.cat_name}}</a>
 
-    <a href="{% url 'types:update' c.id %}" class="button">Update</a>
-    <a href="{% url 'types:delete' c.id %}" class="button">Delete</a>
+    <a href="{% url 'types:cat_update' c.id %}" class="button">Update</a>
+    <a href="{% url 'types:cat_delete' c.id %}" class="button">Delete</a>
     </li>
 </ul>
 {% endfor %}
 {% endif %}
-<a href="{% url 'types:add' type.id %} ">Add a new cat!</a>
+<a href="{% url 'cats:cat_add' type.id %} ">Add a new cat!</a>
 
-<a href='{% url 'types:index' %}'>Back</a>
+<a href='{% url 'cats:index' %}'>Back</a>
 {% endblock %}

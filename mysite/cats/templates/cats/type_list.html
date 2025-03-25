@@ -9,7 +9,7 @@
 <ol>
     {% for i in type_list %}
     <li>
-        <a href="{% url 'types:detail' i.id %}">{{ i.type_name }}</a>
+        <a href="{% url 'types:type_detail' i.id %}">{{ i.type_name }}</a>
         <a href="{% url 'types:update_type' i.id %}" class="button">Update</a>
         <a href="{% url 'types:delete_type' i.id %}" class="button">Delete<a>
         {% endfor %}

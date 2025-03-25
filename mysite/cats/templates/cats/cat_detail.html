@@ -10,7 +10,7 @@
 
 {% for t in treat.treat_set.all %}
 <ul>
-    <li> {{t.treat_name}} 
+    <li> <a href="{% url 'cats:treat_detail' t.id %}"> {{t.treat_name}} </a>
 
     <a href="{% url 'cats:update_treat' t.id %}" class="button">Update</a>
     <a href="{% url 'cats:delete_treat' t.id %}" class="button">Delete</a>
@@ -19,9 +19,9 @@
 {% endfor %}
 {% endif %}
 
-<a href="{% url 'cats:add_treat' treat.id %} ">Add a treat!</a>
+<a href="{% url 'cats:add_treat' cat.id %} ">Add a treat!</a>
 
-<a href='{% url 'types:detail' type.id  %}'>Back</a>
+
 
 
 {% endblock %}
